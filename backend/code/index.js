@@ -1,10 +1,11 @@
 import express from "express"
 import mongoose from "mongoose"
-import routes from "./routes.mjs"
+import routes from "./routes.js"
 import morgan from "morgan"
 const app = express();
 //database
-const mongoAtlasUri = "mongodb+srv://Edu:edu152535@cluster0.n7ksw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+const mongoAtlasUri = process.env.MDB_URL;
+
 mongoose.connect(mongoAtlasUri, 
   {
      useNewUrlParser:true,
